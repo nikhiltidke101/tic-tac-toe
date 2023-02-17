@@ -1,38 +1,75 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.game-heading{
+  font-size: 2rem;
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 180px);
+  grid-template-rows: repeat(3, 180px);
+  gap: 10px;
+  margin-top: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  color: white;
+  background-color: rgb(212, 180, 138);
+  cursor: pointer;
+}
+
+.current-player{
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.winning-component{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: antiquewhite;
+  backdrop-filter: blur 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.cell:hover {
+  background-color: rgb(206, 164, 109);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cell:nth-child(3n+1) {
+  border-left: none;
+}
+
+.cell:nth-child(n+7) {
+  border-top: none;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color:  rgb(206, 164, 109);
 }
